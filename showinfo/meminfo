@@ -1,0 +1,2 @@
+#!/bin/bash
+awk -F':' '/^Buff|^Cach|^Activ|^Inact|^[Mm]em|^Swap|^Dirt/{printf("%s|%dM\n", $1, $2/1024)}' /proc/meminfo

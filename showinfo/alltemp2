@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# my CPU's hwmon module name
+HWCPU=k10temp
+
+if [ -e /sys/class/hwmon/hwmon0/name ]; then
+  TNAME=$(cat /sys/class/hwmon/hwmon0/name)
+  if [ $TNAME == $HWCPU ]; then
+    HWCPUPATH=/sys/class/hwmon/hwmon0
+    HWPATH=/sys/class/hwmon/hwmon1/device
+  fi
+else
+  if [ -e /sys/class/hwmon/hwmon1/name ]; then
+    TNAME=$(cat /sys/class/hwmon/hwmon1/name)
+    if [ $TNAME == $HWCPU ]; then
+      HWCPUPATH=/sys/class/hwmon/hwmon1
+      HWPATH=/sys/class/hwmon/hwmon0/device
+    fi
+  fi
+fi
+
+HTEMP[0]="CPU_00|+$(( $(cat ${HWCPUPATH}/temp1_input)/1000 )).0°C"
+HTEMP[1]="CPU_01|+$(( $(cat ${HWCPUPATH}/temp1_input)/1000 )).0°C"
+
+#HWPATH=/sys/class/hwmon/hwmon1/device
+HTEMP[2]="MBR_t1|+$(( $(cat ${HWPATH}/temp1_input)/1000 )).0°C"
+HTEMP[3]="MBR_t2|+$(( $(cat ${HWPATH}/temp2_input)/1000 )).0°C"
+HTEMP[4]="MBR_t3|+$(( $(cat ${HWPATH}/temp3_input)/1000 )).0°C"
+
+HTEMP[5]="GPU_nv|+$(nvidia-smi --format='csv,noheader' --query-gpu='temperature.gpu').0°C"
+
+for d in "${HTEMP[@]}"; do echo "$d"; done
+

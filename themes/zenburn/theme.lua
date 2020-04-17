@@ -1,0 +1,224 @@
+-------------------------------
+--  "Zenburn" awesome theme  --
+--    By Adrian C. (anrxc)   --
+-------------------------------
+
+-- Alternative icon sets and widget icons:
+--  * http://awesome.naquadah.org/wiki/Nice_Icons
+
+-- {{{ Main
+theme = {}
+local awedir = os.getenv("HOME") .. "/.config/awesome"
+theme.confdir  = awedir .. "/themes/zenburn"
+-- theme.wallpaper_cmd = { "awsetbg /usr/share/awesome/themes/zenburn/zenburn-background.png" }
+theme.wallpaper = awedir .. "/wall.jpg"
+-- }}}
+
+-- {{{ Styles
+--theme.font      = "Terminus Re33 13"
+theme.font     = "Terminus Bold 13"
+
+-- {{{ Colors
+-- theme.bg_normal                     = "#f0f0f0"
+-- theme.bg_focus                      = "#f0f0f0"
+-- theme.bg_urgent                     = "#f0f00f"
+theme.bg_normal                     = "#363940"
+theme.bg_focus                      = "#363940"
+theme.bg_urgent                     = "#363940"
+-- theme.fg_normal                     = "#444444"
+-- theme.fg_focus                      = "#d75f00"
+-- theme.fg_urgent                     = "#df0000"
+-- theme.fg_minimize                   = "#a0a0a0"
+theme.fg_normal                     = "#aaaaaa"
+theme.fg_focus                      = "#ff8c00"
+theme.fg_urgent                     = "#af1d18"
+theme.fg_minimize                   = "#ffffff"
+-- theme.fg_black                      = "#424242"
+-- theme.fg_red                        = "#BB5070"
+-- theme.fg_green                      = "#2A856A"
+-- theme.fg_yellow                     = "#d75f00"
+-- theme.fg_blue                       = "#4271ae"
+-- theme.fg_magenta                    = "#870087"
+-- theme.fg_cyan                       = "#274865"
+-- theme.fg_white                      = "#F4F4F2"
+-- theme.fg_blu                        = "#768AA7"
+theme.fg_black                      = "#424242"
+theme.fg_red                        = "#ce5666"
+theme.fg_green                      = "#80a673"
+theme.fg_yellow                     = "#ffaf5f"
+theme.fg_blue                       = "#7788af"
+theme.fg_magenta                    = "#94738c"
+theme.fg_cyan                       = "#778baf"
+theme.fg_white                      = "#aaaaaa"
+theme.fg_blu                        = "#8ebdde"
+
+theme.border_width                  = "2"
+theme.border_normal                 = "#1c2022"
+theme.border_focus                  = "#606060"
+theme.border_marked                 = "#3ca4d8"
+
+--theme.menu_width                    = "110"
+--theme.menu_font                     = "Terminus Re33 14"
+theme.menu_font                     = "Liberation Sans Mono 12"
+theme.menu_border_width             = "1"
+theme.menu_border_color             = "#768DAB"
+theme.menu_fg_normal                = "#aaaaaa"
+theme.menu_fg_focus                 = "#ff8c00"
+theme.menu_bg_normal                = "#363940"
+theme.menu_bg_focus                 = "#44474F"
+
+theme.tasklist_shape_border_width   = "1"
+theme.tasklist_shape_border_color   = "#44474F"
+
+-- notification_font                   = ""
+theme.notification_bg                 = "#F4F4F2"
+theme.notification_fg                 = "#666666"
+theme.notification_border_width       = "2"
+theme.notification_border_color       = "#666666"
+--notification_shape                  = ""
+--notification_opacity                = ""	
+--notification_margin	                = ""
+--notification_width	                = ""
+--notification_height                 = ""
+
+--theme.tasklist_shape                = ""
+-- }}}
+
+-- {{{ Borders
+--theme.border_width  = "2"
+--theme.border_normal = "#3F3F3F"
+--theme.border_focus  = "#6F6F6F"
+--theme.border_marked = "#CC9393"
+-- }}}
+
+-- {{{ Titlebars
+theme.titlebar_bg_focus  = "#3F3F3F"
+theme.titlebar_bg_normal = "#3F3F3F"
+-- }}}
+
+-- There are other variable sets
+-- overriding the default one when
+-- defined, the sets are:
+-- [taglist|tasklist]_[bg|fg]_[focus|urgent]
+-- titlebar_[normal|focus]
+-- tooltip_[font|opacity|fg_color|bg_color|border_width|border_color]
+-- Example:
+--theme.taglist_bg_focus = "#CC9393"
+-- }}}
+
+-- {{{ Widgets
+-- You can add as many variables as
+-- you wish and access them by using
+-- beautiful.variable in your rc.lua
+--theme.fg_widget        = "#AECF96"
+--theme.fg_center_widget = "#88A175"
+--theme.fg_end_widget    = "#FF5656"
+--theme.bg_widget        = "#494B4F"
+--theme.border_widget    = "#3F3F3F"
+-- }}}
+
+-- {{{ Mouse finder
+theme.mouse_finder_color = "#CC9393"
+-- mouse_finder_[timeout|animate_timeout|radius|factor]
+-- }}}
+
+-- {{{ Menu
+-- Variables set for theming the menu:
+-- menu_[bg|fg]_[normal|focus]
+-- menu_[border_color|border_width]
+--theme.menu_font   = "Terminus Re33 16"
+theme.menu_height = "24"
+theme.menu_width  = "200"
+-- }}}
+
+-- {{{ Icons
+-- {{{ Taglist
+theme.taglist_squares_sel   = "/usr/share/awesome/themes/zenburn/taglist/squarefz.png"
+theme.taglist_squares_unsel = "/usr/share/awesome/themes/zenburn/taglist/squarez.png"
+--theme.taglist_squares_resize = "false"
+-- }}}
+theme.systray_icon_spacing = 2
+-- theme.wibar_bgimage = theme.confdir .. "/icons/panel16.png"
+-- theme.tasklist_bg_image_normal = theme.confdir .. "/icons/panel16.png"
+-- theme.tasklist_bg_image_focus = theme.confdir .. "/icons/panel16.png"
+-- theme.tasklist_bg_image_urgent = theme.confdir .. "/icons/panel16.png"
+-- theme.tasklist_bg_image_minimize = theme.confdir .. "/icons/panel16.png"
+-- {{{ Misc
+theme.awesome_icon           = "/usr/share/awesome/themes/zenburn/awesome-icon.png"
+--theme.menu_submenu_icon      = "/usr/share/awesome/themes/default/submenu.png"
+theme.tasklist_floating_icon = "/usr/share/awesome/themes/default/tasklist/floatingw.png"
+
+-- theme.widget_fs                     = theme.confdir .. "/icons/fsl.png"
+-- theme.widget_mem                    = theme.confdir .. "/icons/meml.png"
+-- theme.widget_temp                   = theme.confdir .. "/icons/templ.png"
+theme.widget_fs                     = theme.confdir .. "/icons/fs.png"
+theme.widget_mem                    = theme.confdir .. "/icons/mem.png"
+theme.widget_temp                   = theme.confdir .. "/icons/temp.png"
+theme.menu_submenu_icon             = theme.confdir .. "/icons/submenu.png"
+theme.widget_uptime                 = theme.confdir .. "/icons/ac.png"
+theme.widget_cpu                    = theme.confdir .. "/icons/cpu.png"
+theme.widget_weather                = theme.confdir .. "/icons/dish.png"
+theme.widget_note                   = theme.confdir .. "/icons/note.png"
+theme.widget_note_on                = theme.confdir .. "/icons/note_on.png"
+theme.widget_netdown                = theme.confdir .. "/icons/net_down.png"
+theme.widget_netup                  = theme.confdir .. "/icons/net_up.png"
+theme.widget_mail                   = theme.confdir .. "/icons/mail.png"
+theme.widget_batt                   = theme.confdir .. "/icons/bat.png"
+theme.widget_clock                  = theme.confdir .. "/icons/clockl.png"
+theme.widget_vol                    = theme.confdir .. "/icons/spkr.png"
+-- }}}
+
+-- {{{ Layout
+theme.layout_tile                   = theme.confdir .. "/icons/tile.png"
+theme.layout_tilegaps               = theme.confdir .. "/icons/tilegaps.png"
+theme.layout_tileleft               = theme.confdir .. "/icons/tileleft.png"
+theme.layout_tilebottom             = theme.confdir .. "/icons/tilebottom.png"
+theme.layout_tiletop                = theme.confdir .. "/icons/tiletop.png"
+theme.layout_fairv                  = theme.confdir .. "/icons/fairv.png"
+theme.layout_fairh                  = theme.confdir .. "/icons/fairh.png"
+theme.layout_spiral                 = theme.confdir .. "/icons/spiral.png"
+theme.layout_dwindle                = theme.confdir .. "/icons/dwindle.png"
+theme.layout_max                    = theme.confdir .. "/icons/max.png"
+theme.layout_fullscreen             = theme.confdir .. "/icons/fullscreen.png"
+theme.layout_magnifier              = theme.confdir .. "/icons/magnifier.png"
+theme.layout_floating               = theme.confdir .. "/icons/floating.png"
+
+theme.useless_gap_width = 4
+theme.lain_icons         = os.getenv("HOME") .. "/.config/awesome/lain/icons/layout/zenburn/"
+theme.layout_termfair    = theme.lain_icons .. "termfair.png"
+theme.layout_cascade     = theme.lain_icons .. "cascade.png"
+theme.layout_cascadetile = theme.lain_icons .. "cascadebrowse.png"
+theme.layout_centerwork  = theme.lain_icons .. "centerwork.png"
+theme.layout_centerfair  = theme.lain_icons .. "centerfair.png"
+theme.layout_uselessfair  = theme.lain_icons .. "uselessfair.png"
+theme.layout_uselesspiral = theme.lain_icons .. "uselesspiral.png"
+theme.layout_uselesstile  = theme.lain_icons .. "uselesstile.png"
+-- }}}
+
+-- {{{ Titlebar
+theme.titlebar_close_button_focus  = "/usr/share/awesome/themes/zenburn/titlebar/close_focus.png"
+theme.titlebar_close_button_normal = "/usr/share/awesome/themes/zenburn/titlebar/close_normal.png"
+
+theme.titlebar_ontop_button_focus_active  = "/usr/share/awesome/themes/zenburn/titlebar/ontop_focus_active.png"
+theme.titlebar_ontop_button_normal_active = "/usr/share/awesome/themes/zenburn/titlebar/ontop_normal_active.png"
+theme.titlebar_ontop_button_focus_inactive  = "/usr/share/awesome/themes/zenburn/titlebar/ontop_focus_inactive.png"
+theme.titlebar_ontop_button_normal_inactive = "/usr/share/awesome/themes/zenburn/titlebar/ontop_normal_inactive.png"
+
+theme.titlebar_sticky_button_focus_active  = "/usr/share/awesome/themes/zenburn/titlebar/sticky_focus_active.png"
+theme.titlebar_sticky_button_normal_active = "/usr/share/awesome/themes/zenburn/titlebar/sticky_normal_active.png"
+theme.titlebar_sticky_button_focus_inactive  = "/usr/share/awesome/themes/zenburn/titlebar/sticky_focus_inactive.png"
+theme.titlebar_sticky_button_normal_inactive = "/usr/share/awesome/themes/zenburn/titlebar/sticky_normal_inactive.png"
+
+theme.titlebar_floating_button_focus_active  = "/usr/share/awesome/themes/zenburn/titlebar/floating_focus_active.png"
+theme.titlebar_floating_button_normal_active = "/usr/share/awesome/themes/zenburn/titlebar/floating_normal_active.png"
+theme.titlebar_floating_button_focus_inactive  = "/usr/share/awesome/themes/zenburn/titlebar/floating_focus_inactive.png"
+theme.titlebar_floating_button_normal_inactive = "/usr/share/awesome/themes/zenburn/titlebar/floating_normal_inactive.png"
+
+theme.titlebar_maximized_button_focus_active  = "/usr/share/awesome/themes/zenburn/titlebar/maximized_focus_active.png"
+theme.titlebar_maximized_button_normal_active = "/usr/share/awesome/themes/zenburn/titlebar/maximized_normal_active.png"
+theme.titlebar_maximized_button_focus_inactive  = "/usr/share/awesome/themes/zenburn/titlebar/maximized_focus_inactive.png"
+theme.titlebar_maximized_button_normal_inactive = "/usr/share/awesome/themes/zenburn/titlebar/maximized_normal_inactive.png"
+-- }}}
+-- }}}
+
+return theme
