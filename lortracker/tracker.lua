@@ -54,10 +54,12 @@ function notify(msg)
   end
 end
 
+local stracker = ""
+
 function tracker.update()
   local ncount = 0
-  local stracker = ""
   local tr_list = {}
+  stracker = ""
 
   local data = assert(io.popen("curl -s 'https://www.linux.org.ru/tracker/?filter=all'"))
   --local data = io.open('LOR-tracker.html')
@@ -114,6 +116,14 @@ function tracker.update()
     sfile:write(stracker)
     sfile:close()
   end
+end
+
+function tracker.show()
+	if(string.len(stracker)>0) then 
+		notify(stracker) 
+	else
+		notify('<empty>')
+	end
 end
 
 return tracker
