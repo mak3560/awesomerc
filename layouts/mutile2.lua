@@ -16,44 +16,51 @@ function do_arrange(p, kleft, kright)
     local wa = p.workarea
     local cls = p.clients
     local n = #cls
-    local width = wa.width * kleft
-    local height = wa.height * 0.756
-    local lwidth = wa.width * kright
-    local lheight = wa.height * 0.22
+    local l_width = wa.width * kleft
+    local ul_height = wa.height * 0.81
+    local ur_height = wa.height * 0.76
+    local r_width = wa.width * kright
+    local bl_height = wa.height * 0.174
+    local br_height = wa.height * 0.23
     local bw = 4
     -- if cls[1] then bw = cls[1].border_width end
 
     local geom = {}
     geom[1] = {}
-    geom[1].x = wa.x + bw/2
-    geom[1].y = wa.y + bw/2
+    geom[1].x = wa.x -- + bw/2
+    geom[1].y = wa.y -- + bw/2
+    geom[1].h = ul_height
     geom[2] = {}
-    geom[2].x = wa.x + width + bw*2
-    geom[2].y = wa.y + bw/2
+    geom[2].x = wa.x + l_width + bw*2
+    geom[2].y = wa.y -- + bw/2
+    geom[2].h = ur_height
     geom[3] = {}
     geom[3].x = wa.x + bw/2
-    geom[3].y = wa.y + height + bw*2
+    geom[3].y = wa.y + ul_height + bw*2
+    geom[3].h = bl_height
     geom[4] = {}
-    geom[4].x = wa.x + width + bw*2
-    geom[4].y = wa.y + height + bw*2 
+    geom[4].x = wa.x + l_width + bw*2
+    geom[4].y = wa.y + ur_height + bw
+    geom[4].h = br_height
     local tn = 1
 
     for k, c in ipairs(cls) do
         local g = {
             x = geom[tn].x,
-            y = geom[tn].y
-            --width = width - 2*c.border_width
+            y = geom[tn].y,
+            height = geom[tn].h
+            -- width = width - 2*c.border_width
             -- height = height - 2*c.border_width
         }
-        if tn>2 then
-          g.height = lheight
-        else 
-          g.height = height
-        end
+        -- if tn>2 then
+        --   g.height = lheight
+        -- else 
+        --   g.height = height
+        -- end
         if tn % 2 == 0 then
-            g.width = lwidth
+            g.width = r_width
         else
-            g.width = width
+            g.width = l_width
         end
         c:geometry(g)
         tn = tn + 1

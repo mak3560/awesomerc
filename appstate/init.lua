@@ -9,11 +9,12 @@ function appdata (ad)
   end
 end
 
+-- local filename = awful.util.getdir("config") .. "/appsaves"
 local appfile = io.open(awful.util.getdir("config") .. "/appsaves", "r")
 if appfile then
   local adat = appfile:read("*all")
   if string.len(adat)>0 then
-    local func, err = loadstring(adat)
+   local func, err = load(adat)
     if func then    -- func()
       local ret,err = pcall(func)
       if not ret then

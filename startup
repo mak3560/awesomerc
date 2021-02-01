@@ -4,14 +4,14 @@
 #
 
 # D-bus
-dbus-launch --auto-syntax
-export $(dbus-launch)
+#dbus-launch --auto-syntax
+#export $(dbus-launch)
 
 # Установка раскладок клавиатуры
 #setxkbmap -model pc105 -layout us,ru -variant ,winkeys -option "grp:caps_toggle,grp_led:scroll,terminate:ctrl_alt_bksp"
 #
 # Переназначить кнопки мыши.(Текущ. карта кнопок: xmodmap -pp)
-xmodmap -e "pointer = 3 2 1 4 5 6 7 8 9 10"
+xmodmap -e "pointer = 3 2 1 4 5 6 7 8 9 10 11 12"
 #xmodmap ~/.Xmodmap
 # Установить скорость передвижения указателя (xset m acceleration threshold)
 xset m 2 8
@@ -32,6 +32,7 @@ volctl &
 # pasystray &
 #volumeicon &
 conky &
+picom -b &
 #compton &
 #cairo-compmgr &
 #wget --timeout=10 --tries=0 -q -O- 2ip.ru | sed -rn 's|^.*"ip-info-entry__value">(([0-9]+.){3}[0-9]+)<.*$|\1|p' > /tmp/my-current-ip &

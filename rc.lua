@@ -8,7 +8,7 @@ local wibox = require("wibox")
 local beautiful = require("beautiful")
 naughty = require("naughty")
 local lain    = require("lain")
-local alttab = require("alttab")
+-- local alttab = require("alttab")
 local quake = require("quake")
 -- lortracker = require("lortracker.tracker")
 local mutile = require("layouts.mutile2")
@@ -251,6 +251,7 @@ fsinfo:attach(fswidget, { script="fsinfo", ncolumns=3,
   headers = { "Mount point", "Free", "Size"},
   headers_align = { "left", "right", "right" }, DEBUG=false })
 
+-- local volume_widget = require("widgets.volume-widget.volume")
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = awful.util.table.join(
@@ -339,6 +340,7 @@ awful.screen.connect_for_each_screen(function(s)
   -- Widgets that are aligned to the right
   local right_layout = wibox.layout.fixed.horizontal()
   right_layout:add(wibox.widget.systray())
+  -- right_layout:add(volume_widget({display_notification = true}))
   right_layout:add(spacer)
   --right_layout:add(netdownicon)
   --right_layout:add(netdowninfo)
@@ -488,10 +490,10 @@ globalkeys = awful.util.table.join(
     --            client.focus:raise()
     --        end
     --    end),
-    awful.key({ "Mod1", }, "Tab", function ()
-        alttab.switch(1, "Alt_L", "Tab", "ISO_Left_Tab") end),
-    awful.key({ "Mod1", "Shift"}, "Tab", function ()
-        alttab.switch(-1, "Alt_L", "Tab", "ISO_Left_Tab") end),
+    -- awful.key({ "Mod1", }, "Tab", function ()
+    --     alttab.switch(1, "Alt_L", "Tab", "ISO_Left_Tab") end),
+    -- awful.key({ "Mod1", "Shift"}, "Tab", function ()
+    --     alttab.switch(-1, "Alt_L", "Tab", "ISO_Left_Tab") end),
     -- Standard program
     awful.key({ modkey, }, "Return", function () awful.util.spawn(terminal) end),
     awful.key({ modkey, "Control" }, "r", awesome.restart),
